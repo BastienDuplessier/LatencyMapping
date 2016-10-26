@@ -32,6 +32,7 @@ class TiledLevel extends TiledMap
 		super(tiledLevel);
 
 		map = new FlxGroup();
+		panorama = new FlxGroup();
 
 		// Load Tile Maps
 		for (layer in layers)
@@ -68,5 +69,20 @@ class TiledLevel extends TiledMap
 
 			map.add(tilemap);
 		}
+    loadImages();
 	}
+
+	public function loadImages()
+	{
+		for (layer in layers)
+		{
+			if (layer.type != TiledLayerType.IMAGE)
+				continue;
+
+			var image:TiledImageLayer = cast layer;
+			var sprite = new FlxSprite(image.x, image.y, "assets/tiled/" + image.imagePath);
+			panorama.add(sprite);
+		}
+	}
+
 }

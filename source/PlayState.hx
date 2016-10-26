@@ -29,7 +29,7 @@ class PlayState extends FlxState
 		// Load the level's tilemaps
 		level = new TiledLevel("assets/tiled/level.tmx", this);
 
-		// Add backgrounds
+		add(level.panorama);
 		add(level.map);
 
 	}
