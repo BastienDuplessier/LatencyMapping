@@ -26,6 +26,12 @@ class PlayState extends FlxState
 
 		bgColor = 0xffaaaaaa;
 
+		// Load the level's tilemaps
+		level = new TiledLevel("assets/tiled/level.tmx", this);
+
+		// Add backgrounds
+		add(level.map);
+
 	}
 
 	override public function update(elapsed:Float):Void
