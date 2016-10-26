@@ -37,7 +37,6 @@ class TiledLevel extends TiledMap
 		// Load Tile Maps
 		for (layer in layers)
 		{
-      trace("Salut");
 			if (layer.type != TiledLayerType.TILE) continue;
 			var tileLayer:TiledTileLayer = cast layer;
 			var tileSheetName:String = "sewer_tileset";
@@ -62,8 +61,6 @@ class TiledLevel extends TiledMap
 
 			// could be a regular FlxTilemap if there are no animated tiles
 			var tilemap = new FlxTilemapExt();
-      trace(tileLayer.tileArray);
-      trace(tileSet.firstGID);
 			tilemap.loadMapFromArray(tileLayer.tileArray, width, height, processedPath,
 				tileSet.tileWidth, tileSet.tileHeight, OFF, tileSet.firstGID, 1, 1);
 
